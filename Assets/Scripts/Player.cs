@@ -37,4 +37,21 @@ public class Player : MonoBehaviour
 		// 移動
 		spaceship.Move (direction);
 	}
+
+	// ぶつかった瞬間に呼び出される
+	void OnTriggerEnter2D (Collider2D c)
+	{
+		// 弾の削除
+		Destroy(c.gameObject);
+
+		// 爆発する
+		spaceship.Explosion();
+
+
+		// プレイヤーを削除
+		Destroy (gameObject);
+
+	
+	}
+
 }

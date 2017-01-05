@@ -20,6 +20,16 @@ public class Spaceship : MonoBehaviour
 	public bool canShot;
 
 
+	//爆発のPrefad
+	public GameObject explosion;
+
+
+	// 当たり判定で検出
+	public void Explosion () {
+		Instantiate (explosion, transform.position, transform.rotation);
+	}
+
+
 	// 弾の作成
 	public void Shot (Transform origin)
 	{
@@ -29,6 +39,5 @@ public class Spaceship : MonoBehaviour
 	// 機体の移動
 	public void Move (Vector2 direction)
 	{
-		GetComponent<Rigidbody2D>().velocity = direction * speed;
-	}
+		GetComponent<Rigidbody2D>().velocity = direction * speed;	}
 }
